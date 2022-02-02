@@ -21,7 +21,7 @@ def scan(ip, port, log):
     # socket.AF_INET6 IPv6 socket.SOCK_DGRAM UDP
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     try:
-        res = s.connect_ex((ip, port))
+        res = s.connect_ex((ip, int(port)))
         if res == 0:
             print(ip + ':' + str(port) + ' OPEN')
             log.write(ip + ':' + str(port) + ' OPEN\n')
